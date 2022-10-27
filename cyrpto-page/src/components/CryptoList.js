@@ -1,13 +1,15 @@
 import React from "react";
+import { useSelector } from 'react-redux'
 
 export function CryptoList() {
     // grab c
-    //const cryptocurrencies = userSelector( state => state.cryptocurrencies )
+    const cryptocurrencies = useSelector( state => state.crypto.cryptocurrencies )
     return (
         <ul>
-            { cryptocurrencies.map( cryptocurrency => {
-                
-            } )}
+            { cryptocurrencies.map( cryptocurrency => (
+                    <li>{cryptocurrency.name}</li>
+            ))
+            }
         </ul>
     )
 }
